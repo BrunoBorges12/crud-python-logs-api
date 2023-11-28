@@ -1,14 +1,15 @@
-FROM python:3.11.3-slim-buster
+    FROM  python:3.11.3-slim-buster
 
-# set work directory
-WORKDIR /usr/src/app
+    WORKDIR /usr/src/app
+
+    RUN pip install  --upgrade pip
+
+    COPY  ./requiments.txt /usr/src/app/requiments.txt
+
+    RUN  pip install  -r requiments.txt
+
+    COPY  . /usr/src/app/   
+
+    CMD [ "python3", "app.py"]
 
 
-
-# install dependencies
-RUN pip install --upgrade pip
-COPY ./requirements.txt /usr/src/app/requirements.txt
-RUN pip install -r requirements.txt
-
-# copy project
-COPY . /usr/src/app/
