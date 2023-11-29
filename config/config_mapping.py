@@ -8,6 +8,6 @@ config_mapping = {
     'default': DevelopmentConfig
 }
 
-app_env = os.getenv('FLASK_ENV', 'default')
-config = config_mapping.get(app_env )
+app_env = os.getenv('FLASK_ENV', 'default')     
+config = config_mapping.get(app_env)
 
